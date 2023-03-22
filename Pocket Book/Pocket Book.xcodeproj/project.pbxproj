@@ -12,6 +12,10 @@
 		BCF4159329CA881F00807FDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCF4159229CA881F00807FDB /* Assets.xcassets */; };
 		BCF4159629CA881F00807FDB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCF4159529CA881F00807FDB /* Preview Assets.xcassets */; };
 		BCF4159E29CA889100807FDB /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF4159D29CA889100807FDB /* Login.swift */; };
+		BCF415A029CA967A00807FDB /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF4159F29CA967A00807FDB /* Home.swift */; };
+		BCF415A329CA981100807FDB /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = BCF415A229CA981100807FDB /* FirebaseAuth */; };
+		BCF415A529CA981100807FDB /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = BCF415A429CA981100807FDB /* FirebaseFirestore */; };
+		BCF415A729CA994900807FDB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BCF415A629CA994900807FDB /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +25,8 @@
 		BCF4159229CA881F00807FDB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BCF4159529CA881F00807FDB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BCF4159D29CA889100807FDB /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		BCF4159F29CA967A00807FDB /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		BCF415A629CA994900807FDB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -28,6 +34,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCF415A329CA981100807FDB /* FirebaseAuth in Frameworks */,
+				BCF415A529CA981100807FDB /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -37,6 +45,7 @@
 		BCF4158229CA881E00807FDB = {
 			isa = PBXGroup;
 			children = (
+				BCF415A629CA994900807FDB /* GoogleService-Info.plist */,
 				BCF4158D29CA881E00807FDB /* Pocket Book */,
 				BCF4158C29CA881E00807FDB /* Products */,
 			);
@@ -74,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				BCF4159D29CA889100807FDB /* Login.swift */,
+				BCF4159F29CA967A00807FDB /* Home.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -94,6 +104,10 @@
 			dependencies = (
 			);
 			name = "Pocket Book";
+			packageProductDependencies = (
+				BCF415A229CA981100807FDB /* FirebaseAuth */,
+				BCF415A429CA981100807FDB /* FirebaseFirestore */,
+			);
 			productName = "Pocket Book";
 			productReference = BCF4158B29CA881E00807FDB /* Pocket Book.app */;
 			productType = "com.apple.product-type.application";
@@ -122,6 +136,9 @@
 				Base,
 			);
 			mainGroup = BCF4158229CA881E00807FDB;
+			packageReferences = (
+				BCF415A129CA981100807FDB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = BCF4158C29CA881E00807FDB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,6 +155,7 @@
 			files = (
 				BCF4159629CA881F00807FDB /* Preview Assets.xcassets in Resources */,
 				BCF4159329CA881F00807FDB /* Assets.xcassets in Resources */,
+				BCF415A729CA994900807FDB /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +168,7 @@
 			files = (
 				BCF4159E29CA889100807FDB /* Login.swift in Sources */,
 				BCF4159129CA881E00807FDB /* ContentView.swift in Sources */,
+				BCF415A029CA967A00807FDB /* Home.swift in Sources */,
 				BCF4158F29CA881E00807FDB /* Pocket_BookApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,6 +368,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BCF415A129CA981100807FDB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BCF415A229CA981100807FDB /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BCF415A129CA981100807FDB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		BCF415A429CA981100807FDB /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BCF415A129CA981100807FDB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BCF4158329CA881E00807FDB /* Project object */;
 }
