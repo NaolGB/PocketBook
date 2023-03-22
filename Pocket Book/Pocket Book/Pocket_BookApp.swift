@@ -10,6 +10,7 @@ import Firebase
 
 @main
 struct Pocket_BookApp: App {
+    @StateObject var dataStore = DataStore()
     
     init () {
         FirebaseApp.configure()
@@ -18,6 +19,7 @@ struct Pocket_BookApp: App {
     var body: some Scene {
         WindowGroup {
             Login()
+                .environmentObject(dataStore)
         }
     }
 }

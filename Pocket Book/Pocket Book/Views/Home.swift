@@ -1,8 +1,27 @@
 import SwiftUI
 
 struct Home: View {
+    @EnvironmentObject var dataStore: DataStore
+    
+    
     var body: some View {
-        Text("PocketBook")
+        VStack{
+            Text("userUID: \(dataStore.getUserUID())")
+            Text("Here is your PocketBook")
+                .font(.title)
+            
+            HStack{
+                Button("Deposit") {
+                    
+                }
+                .buttonStyle(.borderedProminent)
+                Button("Spend") {
+                    
+                }
+                .buttonStyle(.borderedProminent)
+            }
+        }
+        .padding()
     }
 }
 

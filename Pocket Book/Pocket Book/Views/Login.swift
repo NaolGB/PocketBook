@@ -2,6 +2,7 @@ import SwiftUI
 import Firebase
 
 struct Login: View {
+    @EnvironmentObject var dataStore: DataStore
     @State private var email: String = ""
     @State private var password: String = ""
     @State private var confirmPassword: String = ""
@@ -14,6 +15,7 @@ struct Login: View {
     var body: some View {
         if loginSuccess {
             Home()
+                .environmentObject(dataStore)
         }
         else{
             loginView
@@ -134,8 +136,14 @@ struct Login: View {
                 //                enable static login failed message
                 loginFailed = true
             }
+//            get userUID
             else {
-                loginSuccess = true
+                let currentUser = Auth.auth().currentUser
+                if let currentUser = currentUser {
+                    let userUID = currentUser.uid
+                    dataStore.setUserUID(userUID: userUID)
+                    loginSuccess = true
+                }
             }
         }
     }
