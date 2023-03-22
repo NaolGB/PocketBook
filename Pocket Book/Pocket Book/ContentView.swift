@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  Pocket Book
-//
-//  Created by Naol Basaye on 3/21/23.
-//
-
 import SwiftUI
 
 struct ContentView: View {

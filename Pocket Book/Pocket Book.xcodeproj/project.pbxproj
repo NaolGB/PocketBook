@@ -11,6 +11,7 @@
 		BCF4159129CA881E00807FDB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF4159029CA881E00807FDB /* ContentView.swift */; };
 		BCF4159329CA881F00807FDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCF4159229CA881F00807FDB /* Assets.xcassets */; };
 		BCF4159629CA881F00807FDB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCF4159529CA881F00807FDB /* Preview Assets.xcassets */; };
+		BCF4159E29CA889100807FDB /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF4159D29CA889100807FDB /* Login.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		BCF4159029CA881E00807FDB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BCF4159229CA881F00807FDB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BCF4159529CA881F00807FDB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BCF4159D29CA889100807FDB /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				BCF4158E29CA881E00807FDB /* Pocket_BookApp.swift */,
 				BCF4159029CA881E00807FDB /* ContentView.swift */,
+				BCF4159C29CA887A00807FDB /* Views */,
 				BCF4159229CA881F00807FDB /* Assets.xcassets */,
 				BCF4159429CA881F00807FDB /* Preview Content */,
 			);
@@ -65,6 +68,14 @@
 				BCF4159529CA881F00807FDB /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		BCF4159C29CA887A00807FDB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BCF4159D29CA889100807FDB /* Login.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +148,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCF4159E29CA889100807FDB /* Login.swift in Sources */,
 				BCF4159129CA881E00807FDB /* ContentView.swift in Sources */,
 				BCF4158F29CA881E00807FDB /* Pocket_BookApp.swift in Sources */,
 			);
