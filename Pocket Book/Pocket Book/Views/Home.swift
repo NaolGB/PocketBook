@@ -5,23 +5,24 @@ struct Home: View {
     
     
     var body: some View {
-        VStack{
-            Text("userUID: \(dataStore.getUserUID())")
-            Text("Here is your PocketBook")
-                .font(.title)
-            
-            HStack{
-                Button("Deposit") {
-                    
+        NavigationStack {
+            VStack{
+                Text("Here is your PocketBook")
+                    .font(.title)
+            }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("Deposit") {
+                        
+                    }
                 }
-                .buttonStyle(.borderedProminent)
-                Button("Spend") {
-                    
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button("Add expense") {
+                        
+                    }
                 }
-                .buttonStyle(.borderedProminent)
             }
         }
-        .padding()
     }
 }
 

@@ -6,6 +6,7 @@ struct Login: View {
     @State private var email: String = ""
     @State private var password: String = ""
     @State private var confirmPassword: String = ""
+    @State var newUserUID: String = ""
     @State var registerSheetOpen: Bool = false
     @State var loginFailed: Bool = false
     @State private var loginSuccess: Bool = false
@@ -116,15 +117,17 @@ struct Login: View {
         }
     }
     
-    
+//   ------------------------------------
     //    Firebase Auth
     func register() {
         Auth.auth().createUser(withEmail: email, password: password) { result, error in
             if error != nil {
-                //                enable static registration failed message
+//                enable static registration failed message
                 registerFailedError = true
             }
             else{
+                newUserUID = (result?.user.uid)!
+                dataStore.createNewUserDocument(userUID: newUserUID)
                 registerSheetOpen = false
             }
         }
@@ -133,7 +136,7 @@ struct Login: View {
     func login() {
         Auth.auth().signIn(withEmail: email, password: password) { result, error in
             if error != nil {
-                //                enable static login failed message
+//                enable static login failed message
                 loginFailed = true
             }
 //            get userUID
@@ -147,6 +150,7 @@ struct Login: View {
             }
         }
     }
+//    ------------------------------------
     
     //    https://stackoverflow.com/questions/25471114/how-to-validate-an-e-mail-address-in-swift
     //    email validation
