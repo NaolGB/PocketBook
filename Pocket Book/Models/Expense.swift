@@ -1,17 +1,18 @@
 import Foundation
 
-struct Wallet {
+struct Wallet: Identifiable {
+    var id: String
     var currentBalance: Float
     var expenses: [Expense]
     
-    struct Expense: Identifiable {
-        var id: UUID = UUID()
+    struct Expense {
+//        var id: UUID = UUID()
         var amount: Float
         var date: Date
         var type: ExpenseType
     }
     
-    enum ExpenseType: String, Identifiable, CaseIterable {
+    enum ExpenseType: String, Identifiable, CaseIterable, Codable {
         var id: Self {self}
         case housing
         case food
@@ -24,5 +25,10 @@ struct Wallet {
         case debt
         case saving
         case investement
+        case others
     }
+}
+
+public struct FirebaseWalletResponse: Decodable {
+    var currentBalance: Float
 }

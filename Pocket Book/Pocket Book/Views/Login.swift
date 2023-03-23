@@ -145,6 +145,7 @@ struct Login: View {
                 if let currentUser = currentUser {
                     let userUID = currentUser.uid
                     dataStore.setUserUID(userUID: userUID)
+                    dataStore.fetchWallet()
                     loginSuccess = true
                 }
             }
